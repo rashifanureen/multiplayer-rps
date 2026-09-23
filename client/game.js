@@ -4,7 +4,7 @@
 
 // The backend URL will be added after deployment.
 // For local testing, use your local server.
-const SERVER_URL = "http://localhost:3000";
+const SERVER_URL = "https://multiplayer-rps-server.onrender.com";
 
 const socket = io(SERVER_URL);
 
