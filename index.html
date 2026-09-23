@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rock Paper Scissors - Multiplayer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HOME SCREEN -->
+        <section id="homeScreen" class="screen">
+
+            <h1>🎮 Rock Paper Scissors</h1>
+
+            <p class="subtitle">
+                Multiplayer Battle
+            </p>
+
+            <div class="card">
+
+                <h2>Create a Game</h2>
+
+                <input
+                    type="text"
+                    id="playerName"
+                    placeholder="Enter your name"
+                    maxlength="15"
+                >
+
+                <button id="createBtn">
+                    Create Room
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Join a Game</h2>
+
+                <input
+                    type="text"
+                    id="joinName"
+                    placeholder="Enter your name"
+                    maxlength="15"
+                >
+
+                <input
+                    type="text"
+                    id="roomInput"
+                    placeholder="Enter room code"
+                    maxlength="6"
+                >
+
+                <button id="joinBtn">
+                    Join Room
+                </button>
+
+            </div>
+
+            <p id="homeMessage" class="message"></p>
+
+        </section>
+
+
+        <!-- WAITING SCREEN -->
+        <section id="waitingScreen" class="screen hidden">
+
+            <h1>Waiting for Player</h1>
+
+            <div class="room-card">
+
+                <p>Share this room code:</p>
+
+                <div id="roomCode" class="room-code">
+                    ------
+                </div>
+
+                <button id="copyRoomBtn">
+                    📋 Copy Room Code
+                </button>
+
+            </div>
+
+            <p id="waitingMessage">
+                Waiting for another player to join...
+            </p>
+
+            <button id="cancelRoomBtn" class="secondary">
+                Leave Room
+            </button>
+
+        </section>
+
+
+        <!-- GAME SCREEN -->
+        <section id="gameScreen" class="screen hidden">
+
+            <div class="game-header">
+
+                <h1>⚔️ Battle Arena</h1>
+
+                <div class="room-display">
+                    Room:
+                    <strong id="gameRoomCode"></strong>
+                </div>
+
+            </div>
+
+
+            <!-- PLAYERS -->
+            <div class="players">
+
+                <div class="player">
+
+                    <h2 id="player1Name">
+                        Player 1
+                    </h2>
+
+                    <div id="player1Score" class="score">
+                        0
+                    </div>
+
+                    <p id="player1Status">
+                        Waiting...
+                    </p>
+
+                </div>
+
+
+                <div class="vs">
+                    VS
+                </div>
+
+
+                <div class="player">
+
+                    <h2 id="player2Name">
+                        Player 2
+                    </h2>
+
+                    <div id="player2Score" class="score">
+                        0
+                    </div>
+
+                    <p id="player2Status">
+                        Waiting...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROUND -->
+            <div class="round-info">
+
+                <h2 id="roundText">
+                    Round 1
+                </h2>
+
+                <p id="gameMessage">
+                    Choose your move!
+                </p>
+
+            </div>
+
+
+            <!-- CHOICES -->
+            <div id="choices" class="choices">
+
+                <button
+                    class="choice"
+                    data-choice="rock"
+                >
+                    ✊
+                    <span>Rock</span>
+                </button>
+
+                <button
+                    class="choice"
+                    data-choice="paper"
+                >
+                    ✋
+                    <span>Paper</span>
+                </button>
+
+                <button
+                    class="choice"
+                    data-choice="scissors"
+                >
+                    ✌️
+                    <span>Scissors</span>
+                </button>
+
+            </div>
+
+
+            <!-- RESULT -->
+            <div id="resultBox" class="result hidden">
+
+                <h2 id="resultTitle">
+                    Result
+                </h2>
+
+                <p id="resultText"></p>
+
+            </div>
+
+
+            <!-- GAME OVER -->
+            <div id="gameOverBox" class="game-over hidden">
+
+                <h1 id="winnerText">
+                    🏆 Winner!
+                </h1>
+
+                <button id="playAgainBtn">
+                    🔄 Play Again
+                </button>
+
+                <button
+                    id="leaveGameBtn"
+                    class="secondary"
+                >
+                    Leave Game
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- Socket.IO -->
+    <!-- We will change this URL after deploying the backend -->
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+    <script src="game.js"></script>
+
+</body>
+</html>

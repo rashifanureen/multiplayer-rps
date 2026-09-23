@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+.screen {
+    width: 100%;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* HEADINGS */
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #d0d0d0;
+    margin-bottom: 30px;
+}
+
+
+/* CARDS */
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 450px;
+    backdrop-filter: blur(10px);
+}
+
+.card h2 {
+    font-size: 22px;
+}
+
+
+/* INPUTS */
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+
+/* BUTTONS */
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    margin: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+#createBtn,
+#joinBtn,
+#copyRoomBtn,
+#playAgainBtn {
+    background: #00d084;
+    color: white;
+}
+
+.secondary {
+    background: #555;
+    color: white;
+}
+
+.message {
+    margin-top: 15px;
+    color: #ffcc00;
+}
+
+
+/* WAITING ROOM */
+
+.room-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.room-card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.room-code {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    margin: 20px 0;
+    color: #00d084;
+}
+
+
+/* GAME HEADER */
+
+.game-header {
+    margin-bottom: 25px;
+}
+
+.room-display {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+
+/* PLAYERS */
+
+.players {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.player {
+    width: 220px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+}
+
+.player h2 {
+    font-size: 20px;
+    word-break: break-word;
+}
+
+.score {
+    font-size: 55px;
+    font-weight: bold;
+    color: #00d084;
+    margin: 10px 0;
+}
+
+.player p {
+    color: #ccc;
+}
+
+.vs {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+/* ROUND */
+
+.round-info {
+    margin: 25px 0;
+}
+
+.round-info h2 {
+    font-size: 28px;
+}
+
+#gameMessage {
+    color: #ddd;
+    font-size: 18px;
+}
+
+
+/* CHOICES */
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.choice {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+}
+
+.choice span {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.choice:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #00d084;
+}
+
+
+/* RESULT */
+
+.result {
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 20px;
+    background: rgba(0, 208, 132, 0.15);
+    border: 1px solid #00d084;
+    border-radius: 15px;
+}
+
+.result h2 {
+    color: #00d084;
+}
+
+
+/* GAME OVER */
+
+.game-over {
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    max-width: 500px;
+}
+
+.game-over h1 {
+    color: #00d084;
+    margin-bottom: 20px;
+}
+
+
+/* DISABLED BUTTON */
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .players {
+        gap: 10px;
+    }
+
+    .player {
+        width: 140px;
+        padding: 15px 8px;
+    }
+
+    .player h2 {
+        font-size: 16px;
+    }
+
+    .score {
+        font-size: 40px;
+    }
+
+    .vs {
+        font-size: 20px;
+    }
+
+    .choices {
+        gap: 8px;
+    }
+
+    .choice {
+        width: 100px;
+        height: 110px;
+        font-size: 40px;
+    }
+
+    .choice span {
+        font-size: 14px;
+    }
+
+    .room-code {
+        font-size: 32px;
+        letter-spacing: 6px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
